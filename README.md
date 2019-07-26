@@ -1,2 +1,2 @@
-# Statistical-modules
-A series of short chapters on statistical concepts demonstrated in Mathematica
+# Teaching-modules
+A series of short chapters on economcis and statistics concepts demonstrated in Mathematica.
