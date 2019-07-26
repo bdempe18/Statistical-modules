@@ -1,0 +1,527 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21814,        519]
+NotebookOptionsPosition[     20264,        483]
+NotebookOutlinePosition[     20601,        498]
+CellTagsIndexPosition[     20558,        495]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Ricardian Trade", "Section",
+ CellChangeTimes->{{3.7731423156158257`*^9, 
+  3.773142321188506*^9}},ExpressionUUID->"8e1639d2-c174-4d81-bae5-\
+9ef3ee3dc214"],
+
+Cell[TextData[{
+ "Consider the case of two countries, Jamaica and the Bahamas. Each countries \
+produces (and demands) only two goods, sheep and marmalade. What we would \
+like to know is under what conditions would it be beneficial for Jamaica and \
+the Bahamas to trade.\n\nWe first need to initialize our toy model. For \
+simplicity, we are going to insist that both countries have linear production \
+possibility frontiers. At the extremes, Jamaica can produce either 2 flocks \
+of sheep (and no marmalade) of 10 gallons of marmalade. (and no sheep).  \
+Since their PPPs are linear, they are capable of producing every combination \
+of sheep and marmalade that falls on the line that include the points ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{"2", ",", "0"}], ")"}], TraditionalForm]],ExpressionUUID->
+  "8ebbdc6f-f9ea-41c1-82c1-166990b6f367"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{"0", ",", "10"}], ")"}], TraditionalForm]],ExpressionUUID->
+  "29012525-d7a6-46ed-a4d8-7e7ef017a90f"],
+ ". The Bahamas can produce either 8 sheep (and no marmalade) or 4 gallons of \
+marmalade (and no sheep). \n\nWe are going to start the problem in ",
+ ButtonBox["autarky",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://en.wikipedia.org/wiki/Autarky"], None},
+  ButtonNote->"https://en.wikipedia.org/wiki/Autarky"],
+ " - that is without trade. Each countries produces (and consumes) along its \
+own production possibility frontier. I am arbitrarily going to decide \
+(without loss of generality) that Jamaica produces 1 flock of sheep and 5 \
+gallons of marmalade while the Bahamas produces 3 flocks of sheep and 2 \
+gallons of marmalade. \n\nWe can start the problem by sketching their \
+production possibility frontiers."
+}], "Text",
+ CellChangeTimes->{{3.7731425231151867`*^9, 3.773142975805441*^9}, {
+   3.773143096503846*^9, 3.773143096662183*^9}, 3.7731433628001337`*^9, {
+   3.773143410553073*^9, 3.7731434123893147`*^9}, {3.77314350970601*^9, 
+   3.773143509871131*^9}, {3.773143690051671*^9, 3.773143858833226*^9}, {
+   3.773143900766363*^9, 
+   3.773143939694092*^9}},ExpressionUUID->"5c623808-c928-4fe4-afaa-\
+6f72d130c4c9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"jamaica", "[", "x_", "]"}], ":=", 
+    RowBox[{"10", "-", 
+     RowBox[{"5", "x"}]}]}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Equations", " ", "from", " ", "solving", " ", "the", " ", "function", " ",
+     Cell["y=mx+b",ExpressionUUID->"496f9cb4-dace-47bf-ad1e-40412157ecb8"], 
+    " ", "for", " ", "the", " ", "two", " ", "sets", " ", "of", " ", 
+    "points"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"bahamas", "[", "x_", "]"}], ":=", 
+   RowBox[{"8", "-", 
+    RowBox[{"2", "x"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"jamInit", "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "5"}], "}"}]}], ";", 
+  RowBox[{"bahInit", " ", "=", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "2"}], "}"}]}], ";", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Autarky", " ", "production", " ", "points"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"points", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"PointSize", "[", ".01", "]"}], ",", "Blue", ",", 
+     RowBox[{"Point", "@", "jamInit"}], ",", " ", "Orange", ",", 
+     RowBox[{"Point", "@", "bahInit"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ppf", "=", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"jamaica", "[", "x", "]"}], ",", 
+      RowBox[{"bahamas", "[", "x", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "5"}], "}"}], ",", " ", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "12"}], "}"}]}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Sheep\>\"", ",", "\"\<Marmalade\>\""}], "}"}]}], ",", 
+    RowBox[{"PlotLabel", "\[Rule]", "\"\<PPF - Autarky\>\""}], ",", 
+    RowBox[{"Epilog", "\[Rule]", "points"}]}], 
+   "]"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.7731430330595207`*^9, 3.7731432087110167`*^9}, {
+   3.773143263035458*^9, 3.773143307862219*^9}, {3.7731433703798647`*^9, 
+   3.7731434038588877`*^9}, {3.773143478340818*^9, 3.7731435993560038`*^9}, {
+   3.773143642729854*^9, 3.773143680143935*^9}, {3.773143869490074*^9, 
+   3.773143879740958*^9}, {3.773143945561472*^9, 3.773143998788896*^9}, {
+   3.773144029833644*^9, 3.773144138890759*^9}, {3.773144209374345*^9, 
+   3.773144560619932*^9}, {3.7731447408601522`*^9, 3.7731447524539547`*^9}, {
+   3.773144869135181*^9, 3.7731448831954317`*^9}, 3.773144916351633*^9, {
+   3.7731450350974407`*^9, 3.773145087315312*^9}, {3.773145130602001*^9, 
+   3.7731451536729803`*^9}, {3.7731474136265783`*^9, 3.773147424364937*^9}, {
+   3.7731479091027613`*^9, 3.773147919234693*^9}},
+ CellLabel->"In[37]:=",ExpressionUUID->"ace7ce09-d431-4a87-9a84-2f34ee311e98"],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {}, 
+    TagBox[
+     {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], Opacity[
+      1.], LineBox[CompressedData["
+1:eJwBwQE+/iFib1JlAgAAABsAAAACAAAAnX5iBjFkez5cYeHu//8jQMTTIExX
+IFk/3xpc8hL8I0D/xr6DICBpP2LU1vUl+CNAncCNHwUgeT9oR8z8S/AjQGw9
+dW33H4k/cy23CpjgI0DT+2iU8B+ZP4r5jCYwwSNAB9viJ+0fqT+5kTheYIIj
+QKHKn3HrH7k/FsKPzcAEI0Cur4nbbC7KP0Y+2X5f9CFAZz/Rmexy0z8YTvcH
+C/YgQG7lKeO0rtk/TugCeWf5H0AKIYQn3zjgP1prTYd03B1AjhDLKqFg4z+n
+FUFFm+MbQGLbVL8DzOY/4/ZqqH3AGUBxxYRibyfqP5kEbWJapxdAsXAMUxhJ
+7T+RORjMULIVQKF7a+owV/A/d6X52gKTE0CCn/xR9OzxP544hJnOlxFAANPg
+QLx68z+A8M1dKU0PQCZ0ZnhUKvU/oN3/0iwWC0Dk9ZdWC732P0YZhKdjJwdA
+SuVqfZJx+D/IwnTGEeQCQE7kkCseHvo/eIorJmlp/T/qw2KAyK37P3AsEn4V
+m/U/LhHWHUNf/T8wVKPVYEfqPwo/9WHc8/4/QBPXWMjy1D8AAAAAAAAAQAAA
+AAAAAAAABYHGBA==
+       "]]},
+     Annotation[#, "Charting`Private`Tag$54296#1"]& ], 
+    TagBox[
+     {RGBColor[0.880722, 0.611041, 0.142051], AbsoluteThickness[1.6], Opacity[
+      1.], LineBox[CompressedData["
+1:eJwBAQP+/CFib1JlAgAAAC8AAAACAAAAnX5iBjFkez59503y//8fQMTTIExX
+IFk/5nsW9dv8H0D/xr6DICBpP04Q3/e3+R9AncCNHwUgeT8gOXD9b/MfQGw9
+dW33H4k/w4qSCODmH0DT+2iU8B+ZPwgu1x7AzR9AB9viJ+0fqT+UdGBLgJsf
+QKHKn3HrH7k/qwFzpAA3H0Cur4nbbC7KPwVlRzIZXR5AZz/Rmexy0z8T2MVs
+opEdQG7lKeO0rtk/UsOaYynKHEAKIYQn3zjgP773HjbI8RtAjhDLKqFg4z/c
+O0211ycbQGLbVL8DzOY/KMkqEP9MGkBxxYRibyfqP6TOXickdhlAsXAMUxhJ
+7T/U4zzrua0YQKF7a+owV/A/MELKimfUF0CCn/xR9OzxPz+wAdeFCRdAANPg
+QLx68z+Alo/foUIWQCZ0ZnhUKvU/7cXMw9VqFUDk9ZdWC732Pw4FtFR6oRRA
+SuVqfZJx+D9bjUrBNscTQE7kkCseHvo/2Y036vDwEkDqw2KAyK37Pwuezr8b
+KRJALhHWHUNf/T9p9xRxXlARQAo/9WHc8/4/e2AFzxGGEEBH7Vr3IlUAQHIl
+ShG6VQ9A2MJkAVosAUBQejb9S6cNQLWIxF4g9QFAlu52Qr8VDEBmBXXgzs4C
+QDT1FT9iYgpAY3J7tQyaA0A6GwmV5ssIQC9nK85MYQRAojGpY2Y9B0DPEiwL
+dTkFQGLap+kVjQVAu66CmywDBkCKovrIpvkDQHsBKlDM3QZACv2rX2dEAkAK
+3HpIbrQHQOxHCm8jlwBA5aYhlJ98CEBsZHmvgQ3+P5QoGQS5VQlAsF2b7xup
++j+QmmbHYSAKQMCVZeJ4fvc/WpRdzgznCkCYronGzGP0P/hEpfmfvgtAIOxq
+GYAF8T/j5UJ4wocMQOjQ6D3swes/oj0xG81hDUDwEnYml/HkP62FdRFnLQ5A
+MKWn6I4p3T+HVWNLA/UOQJCnyknLr9A/NdyhqYfND0CA5REvKzypPwAAAAAA
+ABBAAAAAAAAAAAC/sE0h
+       "]]},
+     Annotation[#, "Charting`Private`Tag$54296#2"]& ]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox["\"Sheep\"", TraditionalForm], 
+    FormBox["\"Marmalade\"", TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Epilog->{
+    PointSize[0.01], 
+    RGBColor[0, 0, 1], 
+    PointBox[{1, 5}], 
+    RGBColor[1, 0.5, 0], 
+    PointBox[{3, 2}]},
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, 
+     Charting`ScaledFrameTicks[{Identity, Identity}]}, {Automatic, 
+     Charting`ScaledFrameTicks[{Identity, Identity}]}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  ImageSize->Large,
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "ScalingFunctions" -> None, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox["\"PPF - Autarky\"", TraditionalForm],
+  PlotRange->{{0., 4.999999897959183}, {0, 12}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {0, 0}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.773143122061692*^9, 3.7731432091792517`*^9}, {
+   3.773143274361416*^9, 3.773143308333316*^9}, {3.773143373440215*^9, 
+   3.773143404888816*^9}, {3.7731434800632677`*^9, 3.773143542607747*^9}, {
+   3.7731435878628197`*^9, 3.773143599848999*^9}, {3.7731436460044193`*^9, 
+   3.773143669746278*^9}, 3.773143880401915*^9, 3.773143999418639*^9, {
+   3.773144031039186*^9, 3.773144139392083*^9}, {3.773144245243525*^9, 
+   3.7731442780344267`*^9}, 3.7731443502725363`*^9, 3.773144380963984*^9, {
+   3.773144415132695*^9, 3.773144561062828*^9}, 3.773144744801021*^9, 
+   3.7731447974352016`*^9, 3.773144883692683*^9, 3.7731450883953447`*^9, 
+   3.7731451349563723`*^9, 3.773145963062203*^9, 3.773147425075089*^9, 
+   3.77314751612521*^9, 3.773147581158182*^9, 3.7731478154248543`*^9, 
+   3.7731481461181393`*^9, 3.773148738338331*^9},
+ CellLabel->"Out[41]=",ExpressionUUID->"60f8b9aa-18ce-4b8a-b2b1-a7596b4b1ff4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Absolute Advantage", "Subsection",
+ CellChangeTimes->{{3.773142375588437*^9, 
+  3.773142379317507*^9}},ExpressionUUID->"5c688aad-7cbe-4a43-a235-\
+c0ff06b82065"],
+
+Cell[TextData[{
+ "A country is said to have an absolute advantage if it can produce more of a \
+given good than another countries. We can look at the extremes to figure out \
+which country is ",
+ StyleBox["capable",
+  FontSlant->"Italic",
+  FontVariations->{"Underline"->True}],
+ StyleBox[" ",
+  FontSlant->"Italic"],
+ "of outproduce the other country and for what good."
+}], "Text",
+ CellChangeTimes->{{3.773144396089115*^9, 3.7731444025979147`*^9}, {
+  3.773144574585052*^9, 
+  3.773144631280596*^9}},ExpressionUUID->"78ef247d-244a-4b0c-be18-\
+2bd126421775"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Comparative Advantage", "Subsection",
+ CellChangeTimes->{{3.773142382035907*^9, 
+  3.7731423852543907`*^9}},ExpressionUUID->"6ecece26-883b-40c0-92c9-\
+0af6debe6fe8"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"J", "=", 
+    RowBox[{
+     FractionBox["10", "2"], "=", "5"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ea2e77b8-737f-44fc-b226-d13a9de99be7"],
+ ". Every new flock of sheep costs 5 gallons of marmalade.\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"B", "=", 
+    RowBox[{
+     FractionBox["8", "4"], "=", "2"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4fb81c2b-1293-4f83-8e89-56394dbc8b4d"],
+ ". Every new flock of sheep costs 2 gallons of marmalade.\n\nSheep \
+production is ",
+ StyleBox["relatively",
+  FontVariations->{"Underline"->True}],
+ " cheaper for the Bahamas than for Jamaica where cost is defined in terms of \
+a countries own capacity."
+}], "Text",
+ CellChangeTimes->{{3.773145955042842*^9, 
+  3.7731460741995573`*^9}},ExpressionUUID->"a1033f1d-66fe-4d10-8064-\
+2762804ae523"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Trade", "Subsection",
+ CellChangeTimes->{{3.77314518385356*^9, 
+  3.773145184349279*^9}},ExpressionUUID->"1de68f54-6c0a-4080-9cf0-\
+59626215e943"],
+
+Cell[TextData[{
+ "A trade agreement occurs when two countries get together and say \
+\[OpenCurlyDoubleQuote]I will give you so much of good x in exchange for so \
+much of good y\[CloseCurlyDoubleQuote]. The amount of good x that is costs to \
+receive a unit of good y is called the ",
+ StyleBox["relative price.",
+  FontWeight->"Bold"],
+ " How do countries agree on a relative price?\n\nWell we cannot exactly \
+predict the relative price, but we know that the comparative advantages of \
+the two countries effective create bounds on possible trade agreements.  If \
+the relative price is too low, then one country may as well produce \
+domestically. If the relative price is too high, the other country would be \
+better off producing domestically. This seems odd, but if we invert the \
+relative price to form the quantity of good y in exchange for a unit of good \
+x, then you can easily see that at too high an original relative prices, the \
+effective relative price for the other good drops. This may seem odd at \
+first, but the simulation below should enforce how comparative advantages \
+create minimum and maximum relative prices for trade agreements."
+}], "Text",
+ CellChangeTimes->{{3.773148309454507*^9, 3.773148387751524*^9}, {
+  3.773148420448266*^9, 
+  3.7731486970706997`*^9}},ExpressionUUID->"8b7d5ba5-eecd-4ceb-8c69-\
+4381bea20236"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"newJam", "=", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "10"}], "}"}], " ", "+", " ", 
+       RowBox[{"{", 
+        RowBox[{"q", ",", 
+         RowBox[{
+          RowBox[{"-", "rp"}], "*", "q"}]}], "}"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"newBah", "=", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"4", ",", "0"}], "}"}], " ", "+", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "q"}], ",", 
+         RowBox[{"rp", "*", "q"}]}], "}"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"newPoints", " ", "=", " ", 
+      RowBox[{"{", 
+       RowBox[{"Blue", ",", " ", 
+        RowBox[{"Point", "@", "newJam"}], ",", " ", "Orange", ",", 
+        RowBox[{"Point", "@", " ", "newBah"}]}], "}"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"jamaica", "[", "x", "]"}], ",", 
+         RowBox[{"bahamas", "[", "x", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "0", ",", "5"}], "}"}], ",", " ", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "12"}], "}"}]}], ",", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"\"\<Sheep\>\"", ",", "\"\<Marmalade\>\""}], "}"}]}], ",", 
+       RowBox[{"PlotLabel", "\[Rule]", "\"\<PPF - Autarky\>\""}], ",", 
+       RowBox[{"Epilog", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"PointSize", "[", ".0075", "]"}], ",", "points", ",", " ", 
+          "newPoints", ",", "Blue", ",", " ", "Dotted", ",", " ", 
+          RowBox[{"Line", "@", 
+           RowBox[{"{", 
+            RowBox[{"jamInit", ",", " ", "newJam"}], "}"}]}], ",", "Orange", 
+          ",", 
+          RowBox[{"Line", "@", 
+           RowBox[{"{", 
+            RowBox[{"bahInit", ",", "newBah"}], "}"}]}]}], "}"}]}]}], "]"}]}],
+     ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "rp", ",", " ", "0", ",", 
+        "\"\<Relative price (Sheep for marmalade\>\""}], "}"}], ",", 
+      RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"q", ",", "1", ",", "\"\<Quantity\>\""}], "}"}], ",", "0", ",",
+       "5"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJwlzT1IAnEABfCjoQ+QCsKES+FKKyGyk3ItWxwEE1xczEHsCwkzwYPAqQhb
+LtCCcvBwCAuKxAr6cCgqyewKo0DcSrOliAilaMn3b3j84PHgtTvclrEaiqLo
+aqA3aJDsy9+GfVeRZigYC60wqdArYWM/1Q3NeZGFgW29DloutqzQmaHnYYmK
+LcHdPYaHscxKEBqnftfhy0NTGNYFXAKc5KY3YGdGe0R+v06TsKIsnkHp4eI5
+lKQ0tzBk4Ih9o+V76OfYR2jy9eahW/5MZLpGCtB1LCvCCY/6HdqH7GWo+Xyl
+DqrWrtbL4FpUpGEprmCgSpVSQTYy3gMT0oQWmm8WdPA7O2OGg5U74okhZ4W2
+a9YGc+q4g+xbnmbhR1qYgw1ZZwCG/R4e7nTEiQN82yX8if67vGlKk14IifAP
+J0zOwQ==
+  "],
+ CellLabel->"In[46]:=",ExpressionUUID->"c2098c84-6319-41e5-9dbd-1c78069db802"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`q$$ = 2.57, $CellContext`rp$$ = 0.25, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`rp$$], 0, 
+       "Relative price (Sheep for marmalade"}, -10, 10}, {{
+       Hold[$CellContext`q$$], 1, "Quantity"}, 0, 5}}, Typeset`size$$ = {
+    576., {186., 191.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`rp$58640$$ = 
+    0, $CellContext`q$58641$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`q$$ = 1, $CellContext`rp$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`rp$$, $CellContext`rp$58640$$, 0], 
+        Hold[$CellContext`q$$, $CellContext`q$58641$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`newJam = {0, 
+          10} + {$CellContext`q$$, (-$CellContext`rp$$) $CellContext`q$$}; \
+$CellContext`newBah = {4, 
+          0} + {-$CellContext`q$$, $CellContext`rp$$ $CellContext`q$$}; \
+$CellContext`newPoints = {Blue, 
+          Point[$CellContext`newJam], Orange, 
+          Point[$CellContext`newBah]}; Plot[{
+          $CellContext`jamaica[$CellContext`x], 
+          $CellContext`bahamas[$CellContext`x]}, {$CellContext`x, 0, 5}, 
+         PlotRange -> {0, 12}, ImageSize -> Large, 
+         AxesLabel -> {"Sheep", "Marmalade"}, PlotLabel -> "PPF - Autarky", 
+         Epilog -> {
+           PointSize[0.0075], $CellContext`points, $CellContext`newPoints, 
+           Blue, Dotted, 
+           Line[{$CellContext`jamInit, $CellContext`newJam}], Orange, 
+           Line[{$CellContext`bahInit, $CellContext`newBah}]}]), 
+      "Specifications" :> {{{$CellContext`rp$$, 0, 
+          "Relative price (Sheep for marmalade"}, -10, 
+         10}, {{$CellContext`q$$, 1, "Quantity"}, 0, 5}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{623., {242., 249.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.773148003033978*^9, 3.773148031624515*^9}, 
+   3.7731480701807957`*^9, {3.773148122651568*^9, 3.7731482278635693`*^9}, {
+   3.7731482781357317`*^9, 3.773148284662903*^9}, {3.7731487415539494`*^9, 
+   3.773148781596137*^9}},
+ CellLabel->"Out[46]=",ExpressionUUID->"49a0e7fe-b813-482e-b32f-52bfc2a62fe2"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1024, 731},
+WindowMargins->{{Automatic, -1024}, {0, Automatic}},
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 162, 3, 68, "Section",ExpressionUUID->"8e1639d2-c174-4d81-bae5-9ef3ee3dc214"],
+Cell[745, 27, 2181, 41, 348, "Text",ExpressionUUID->"5c623808-c928-4fe4-afaa-6f72d130c4c9"],
+Cell[CellGroupData[{
+Cell[2951, 72, 2894, 66, 193, "Input",ExpressionUUID->"ace7ce09-d431-4a87-9a84-2f34ee311e98"],
+Cell[5848, 140, 4776, 102, 394, "Output",ExpressionUUID->"60f8b9aa-18ce-4b8a-b2b1-a7596b4b1ff4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10661, 247, 166, 3, 55, "Subsection",ExpressionUUID->"5c688aad-7cbe-4a43-a235-c0ff06b82065"],
+Cell[10830, 252, 560, 14, 60, "Text",ExpressionUUID->"78ef247d-244a-4b0c-be18-2bd126421775"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11427, 271, 171, 3, 55, "Subsection",ExpressionUUID->"6ecece26-883b-40c0-92c9-0af6debe6fe8"],
+Cell[11601, 276, 905, 25, 118, "Text",ExpressionUUID->"a1033f1d-66fe-4d10-8064-2762804ae523"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12543, 306, 152, 3, 55, "Subsection",ExpressionUUID->"1de68f54-6c0a-4080-9cf0-59626215e943"],
+Cell[12698, 311, 1351, 22, 228, "Text",ExpressionUUID->"8b7d5ba5-eecd-4ceb-8c69-4381bea20236"],
+Cell[CellGroupData[{
+Cell[14074, 337, 3108, 80, 262, "Input",ExpressionUUID->"c2098c84-6319-41e5-9dbd-1c78069db802"],
+Cell[17185, 419, 3039, 59, 543, "Output",ExpressionUUID->"49a0e7fe-b813-482e-b32f-52bfc2a62fe2"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
