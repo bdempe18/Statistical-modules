@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     21814,        519]
-NotebookOptionsPosition[     20264,        483]
-NotebookOutlinePosition[     20601,        498]
-CellTagsIndexPosition[     20558,        495]
+NotebookDataLength[     22123,        523]
+NotebookOptionsPosition[     20573,        487]
+NotebookOutlinePosition[     20910,        502]
+CellTagsIndexPosition[     20867,        499]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -378,17 +378,18 @@ Cell[BoxData[
        RowBox[{"AxesLabel", "\[Rule]", 
         RowBox[{"{", 
          RowBox[{"\"\<Sheep\>\"", ",", "\"\<Marmalade\>\""}], "}"}]}], ",", 
-       RowBox[{"PlotLabel", "\[Rule]", "\"\<PPF - Autarky\>\""}], ",", 
+       RowBox[{"PlotLabel", "\[Rule]", "\"\<PPF - After Trade\>\""}], ",", 
        RowBox[{"Epilog", "\[Rule]", 
         RowBox[{"{", 
          RowBox[{
           RowBox[{"PointSize", "[", ".0075", "]"}], ",", "points", ",", " ", 
-          "newPoints", ",", "Blue", ",", " ", "Dotted", ",", " ", 
-          RowBox[{"Line", "@", 
+          "newPoints", ",", "Blue", ",", " ", "Dotted", ",", 
+          RowBox[{"Arrowheads", "[", "Medium", "]"}], ",", " ", 
+          RowBox[{"Arrow", "@", 
            RowBox[{"{", 
             RowBox[{"jamInit", ",", " ", "newJam"}], "}"}]}], ",", "Orange", 
           ",", 
-          RowBox[{"Line", "@", 
+          RowBox[{"Arrow", "@", 
            RowBox[{"{", 
             RowBox[{"bahInit", ",", "newBah"}], "}"}]}]}], "}"}]}]}], "]"}]}],
      ",", "\[IndentingNewLine]", 
@@ -397,7 +398,7 @@ Cell[BoxData[
       RowBox[{"{", 
        RowBox[{
        "rp", ",", " ", "0", ",", 
-        "\"\<Relative price (Sheep for marmalade\>\""}], "}"}], ",", 
+        "\"\<Relative price (Sheep for marmalade)\>\""}], "}"}], ",", 
       RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
     RowBox[{"{", 
      RowBox[{
@@ -406,36 +407,36 @@ Cell[BoxData[
        "5"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
   "\[IndentingNewLine]"}]], "Input",
  CellChangeTimes->CompressedData["
-1:eJwlzT1IAnEABfCjoQ+QCsKES+FKKyGyk3ItWxwEE1xczEHsCwkzwYPAqQhb
-LtCCcvBwCAuKxAr6cCgqyewKo0DcSrOliAilaMn3b3j84PHgtTvclrEaiqLo
-aqA3aJDsy9+GfVeRZigYC60wqdArYWM/1Q3NeZGFgW29DloutqzQmaHnYYmK
-LcHdPYaHscxKEBqnftfhy0NTGNYFXAKc5KY3YGdGe0R+v06TsKIsnkHp4eI5
-lKQ0tzBk4Ih9o+V76OfYR2jy9eahW/5MZLpGCtB1LCvCCY/6HdqH7GWo+Xyl
-DqrWrtbL4FpUpGEprmCgSpVSQTYy3gMT0oQWmm8WdPA7O2OGg5U74okhZ4W2
-a9YGc+q4g+xbnmbhR1qYgw1ZZwCG/R4e7nTEiQN82yX8if67vGlKk14IifAP
-J0zOwQ==
+1:eJwlzjtIggEUBeAfiVKQHoQFpmCpJUSmmFNQtjgIKri4mIPYCwmzQCNw6oEu
+BlpQDoqDWJEkVpDlUFSSmYVRIC5Rmi1FhClFQ3n+hssHhwPnthvMmhEKQRDs
+6sEZt5y+x3odsl74GqFfkW+BcbaMC+slRBdU59Ii6NiWSaHmbFMLjSnmPCwS
+ISfc2eW4YCi14oaKiZ91+HzX4IV1DpMfjtsmg5CfEsfI3dJxHFa4hRPIOFg6
+hfSE8Bp65DbS3uHyLbTbRPdQae3JQTPriZTTqcpD02FrAY5ZBG9QP6gvQ+HH
+C7FftXaV2grXAmkmLEbYHMjjJXhQ5BvthlFGVAzVVwtS+JWZUsOByg3pkTyr
+hbpLkQ5mBRED2W9+nIbvSf8cpGWMDui1W1ww3BEh7XO1ncPvwL/LG8okmfs9
+afKP3yZKrOqDU1cDjcEwFW71f9LgokTFg7OlEh/+AQg95Sc=
   "],
- CellLabel->"In[46]:=",ExpressionUUID->"c2098c84-6319-41e5-9dbd-1c78069db802"],
+ CellLabel->"In[53]:=",ExpressionUUID->"c2098c84-6319-41e5-9dbd-1c78069db802"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`q$$ = 2.57, $CellContext`rp$$ = 0.25, 
+   DynamicModuleBox[{$CellContext`q$$ = 1, $CellContext`rp$$ = 0, 
     Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
     1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
        Hold[$CellContext`rp$$], 0, 
-       "Relative price (Sheep for marmalade"}, -10, 10}, {{
+       "Relative price (Sheep for marmalade)"}, -10, 10}, {{
        Hold[$CellContext`q$$], 1, "Quantity"}, 0, 5}}, Typeset`size$$ = {
     576., {186., 191.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
-    Typeset`skipInitDone$$ = True, $CellContext`rp$58640$$ = 
-    0, $CellContext`q$58641$$ = 0}, 
+    Typeset`skipInitDone$$ = True, $CellContext`rp$75387$$ = 
+    0, $CellContext`q$75388$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`q$$ = 1, $CellContext`rp$$ = 0}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`rp$$, $CellContext`rp$58640$$, 0], 
-        Hold[$CellContext`q$$, $CellContext`q$58641$$, 0]}, 
+        Hold[$CellContext`rp$$, $CellContext`rp$75387$$, 0], 
+        Hold[$CellContext`q$$, $CellContext`q$75388$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -451,14 +452,15 @@ $CellContext`newPoints = {Blue,
           $CellContext`jamaica[$CellContext`x], 
           $CellContext`bahamas[$CellContext`x]}, {$CellContext`x, 0, 5}, 
          PlotRange -> {0, 12}, ImageSize -> Large, 
-         AxesLabel -> {"Sheep", "Marmalade"}, PlotLabel -> "PPF - Autarky", 
-         Epilog -> {
+         AxesLabel -> {"Sheep", "Marmalade"}, PlotLabel -> 
+         "PPF - After Trade", Epilog -> {
            PointSize[0.0075], $CellContext`points, $CellContext`newPoints, 
            Blue, Dotted, 
-           Line[{$CellContext`jamInit, $CellContext`newJam}], Orange, 
-           Line[{$CellContext`bahInit, $CellContext`newBah}]}]), 
+           Arrowheads[Medium], 
+           Arrow[{$CellContext`jamInit, $CellContext`newJam}], Orange, 
+           Arrow[{$CellContext`bahInit, $CellContext`newBah}]}]), 
       "Specifications" :> {{{$CellContext`rp$$, 0, 
-          "Relative price (Sheep for marmalade"}, -10, 
+          "Relative price (Sheep for marmalade)"}, -10, 
          10}, {{$CellContext`q$$, 1, "Quantity"}, 0, 5}}, "Options" :> {}, 
       "DefaultOptions" :> {}],
      ImageSizeCache->{623., {242., 249.}},
@@ -475,8 +477,10 @@ $CellContext`newPoints = {Blue,
  CellChangeTimes->{{3.773148003033978*^9, 3.773148031624515*^9}, 
    3.7731480701807957`*^9, {3.773148122651568*^9, 3.7731482278635693`*^9}, {
    3.7731482781357317`*^9, 3.773148284662903*^9}, {3.7731487415539494`*^9, 
-   3.773148781596137*^9}},
- CellLabel->"Out[46]=",ExpressionUUID->"49a0e7fe-b813-482e-b32f-52bfc2a62fe2"]
+   3.773148781596137*^9}, {3.773155349905449*^9, 3.773155363784048*^9}, {
+   3.7731554033536243`*^9, 3.773155408411224*^9}, {3.77315562178223*^9, 
+   3.773155632292221*^9}, 3.77315578710028*^9},
+ CellLabel->"Out[53]=",ExpressionUUID->"42abf395-42eb-4754-8716-7a21a1e6826f"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -516,8 +520,8 @@ Cell[CellGroupData[{
 Cell[12543, 306, 152, 3, 55, "Subsection",ExpressionUUID->"1de68f54-6c0a-4080-9cf0-59626215e943"],
 Cell[12698, 311, 1351, 22, 228, "Text",ExpressionUUID->"8b7d5ba5-eecd-4ceb-8c69-4381bea20236"],
 Cell[CellGroupData[{
-Cell[14074, 337, 3108, 80, 262, "Input",ExpressionUUID->"c2098c84-6319-41e5-9dbd-1c78069db802"],
-Cell[17185, 419, 3039, 59, 543, "Output",ExpressionUUID->"49a0e7fe-b813-482e-b32f-52bfc2a62fe2"]
+Cell[14074, 337, 3215, 81, 262, "Input",ExpressionUUID->"c2098c84-6319-41e5-9dbd-1c78069db802"],
+Cell[17292, 420, 3241, 62, 510, "Output",ExpressionUUID->"42abf395-42eb-4754-8716-7a21a1e6826f"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
