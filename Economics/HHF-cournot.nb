@@ -1,0 +1,1062 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     37174,       1054]
+NotebookOptionsPosition[     34217,       1000]
+NotebookOutlinePosition[     34550,       1015]
+CellTagsIndexPosition[     34507,       1012]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Practice Problems", "Title",
+ CellChangeTimes->{{3.774116038011236*^9, 
+  3.774116040707573*^9}},ExpressionUUID->"62d2a2c1-cf7c-4920-aa8a-\
+cd12ff10f4f5"],
+
+Cell[CellGroupData[{
+
+Cell["Imperfect competition", "Chapter",
+ CellChangeTimes->{{3.774116043471078*^9, 
+  3.7741160518577547`*^9}},ExpressionUUID->"0ee83544-4d4f-496b-ab2c-\
+46befb53e00a"],
+
+Cell[CellGroupData[{
+
+Cell["1. Herfindahl-Hirschman Index in Cournot competition", "Section",
+ CellChangeTimes->{{3.7741059598557167`*^9, 3.7741059905353203`*^9}, 
+   3.7741145843297977`*^9, {3.77411608607966*^9, 3.7741160873104677`*^9}, {
+   3.774116138925295*^9, 
+   3.774116139167982*^9}},ExpressionUUID->"e4a1869a-9d35-4946-bab2-\
+fe979c2befc3"],
+
+Cell[TextData[{
+ "An industry consists of three firms. All three have identical variable \
+costs ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"VC", "(", 
+     SubscriptBox["q", "i"], ")"}], "=", 
+    RowBox[{
+     RowBox[{"5", 
+      SubscriptBox["q", "i"]}], "+", 
+     SuperscriptBox[
+      SubscriptBox["q", "1"], "2"]}]}], TraditionalForm]],ExpressionUUID->
+  "2aadebf8-7140-4a54-ad97-ce082632ff30"],
+ ". Firms 2 and 3 have fixed costs of $2,000. Firm 1\[CloseCurlyQuote]s fixed \
+costs are $3,000. market demand is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Q", "=", 
+    RowBox[{"335", "-", "P"}]}], TraditionalForm]],ExpressionUUID->
+  "cdd7fb02-a02c-4f4a-9171-296c037d12ff"],
+ " and the firms play Cournot."
+}], "Text",
+ CellChangeTimes->{{3.7741059947467537`*^9, 
+  3.7741061518159513`*^9}},ExpressionUUID->"eb604d44-704c-456e-b6ad-\
+eb72e113873c"],
+
+Cell[CellGroupData[{
+
+Cell["A. What is the Herfindahl-Hirschman Index of the industry?", \
+"Subsection",
+ CellChangeTimes->{{3.774106163946938*^9, 3.774106188353963*^9}, {
+  3.774116092669434*^9, 3.7741160931306877`*^9}, {3.774116141842814*^9, 
+  3.7741161422540493`*^9}},ExpressionUUID->"111f88ea-f137-4553-9096-\
+756f5a8acaf1"],
+
+Cell[CellGroupData[{
+
+Cell["Cournot equilibrium", "Subsubsection",
+ CellChangeTimes->{{3.7741063167480583`*^9, 
+  3.77410632622192*^9}},ExpressionUUID->"0f8b855d-0649-4dca-9474-\
+bf589cc4854f"],
+
+Cell[TextData[{
+ "To solve for the Cournot equilibrium, we need to derive each firm\
+\[CloseCurlyQuote]s profit functions and maximize profits with knowledge that \
+profit depends on the other firms playing their best strategy. Starting with \
+firm 1.\n\nGenerally profit ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Pi]", "i"], "=", 
+    RowBox[{"Revenue", "-", 
+     RowBox[{"Total", " ", "variable", " ", "costs"}], "-", 
+     RowBox[{"total", " ", "fixed", " ", "costs"}]}]}], TraditionalForm]],
+  ExpressionUUID->"948662aa-68af-48f8-9446-2b3392c2b0bf"],
+ ". Each firm faces the following profit function"
+}], "Text",
+ CellChangeTimes->{
+  3.774108107767432*^9, {3.774111045552359*^9, 3.774111049155195*^9}, {
+   3.774112715429975*^9, 3.774112715430532*^9}, {3.774112831293078*^9, 
+   3.774112832793805*^9}, {3.7741129210472403`*^9, 3.774113067280923*^9}, {
+   3.774113247913083*^9, 3.774113298534624*^9}, {3.774113356973097*^9, 
+   3.774113421327261*^9}, {3.774113572116412*^9, 3.774113720175338*^9}, {
+   3.774114307077338*^9, 3.7741143140699663`*^9}, {3.774114354034519*^9, 
+   3.7741143846723213`*^9}, {3.77411587848938*^9, 
+   3.774115892298218*^9}},ExpressionUUID->"202ecd2d-3744-45b6-8b84-\
+72ce789a4b6d"],
+
+Cell[TextData[{
+ "\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Pi]", "1"], "=", 
+    RowBox[{
+     SubscriptBox["Pq", "1"], "-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"5", 
+        SubscriptBox["q", "1"]}], "+", 
+       SuperscriptBox[
+        SubscriptBox["q", "1"], "2"]}], ")"}], "-", "3000"}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Pi]", "2"], "=", 
+    RowBox[{
+     SubscriptBox["Pq", "2"], "-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"5", 
+        SubscriptBox["q", "1"]}], "+", 
+       SuperscriptBox[
+        SubscriptBox["q", "1"], "2"]}], ")"}], "-", "2000"}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Pi]", "3"], "=", 
+    RowBox[{
+     SubscriptBox["Pq", "3"], "-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"5", 
+        SubscriptBox["q", "1"]}], "+", 
+       SuperscriptBox[
+        SubscriptBox["q", "1"], "2"]}], ")"}], "-", "2000"}]}], 
+   TraditionalForm]}],ExpressionUUID->
+  "462326a5-182c-49cc-9954-c4156a08d9f1"],
+ "\n\nWe need to start eliminating variables. ",
+ Cell[BoxData[
+  FormBox["P", TraditionalForm]],ExpressionUUID->
+  "ae054b72-a6f6-4572-a056-59a21399bdf8"],
+ " can be eliminating but plugging in the right-hand side of the inverse \
+demand function, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"P", "=", 
+    RowBox[{"335", "-", 
+     RowBox[{"Q", "."}]}]}], TraditionalForm]],ExpressionUUID->
+  "1518a93d-f227-4cde-a62f-a134ae256bf5"]
+}], "Text",
+ CellChangeTimes->{
+  3.774108107767432*^9, {3.774111045552359*^9, 3.774111049155195*^9}, {
+   3.774112715429975*^9, 3.774112715430532*^9}, {3.774112831293078*^9, 
+   3.774112832793805*^9}, {3.7741129210472403`*^9, 3.774113067280923*^9}, {
+   3.774113247913083*^9, 3.774113298534624*^9}, {3.774113356973097*^9, 
+   3.774113421327261*^9}, {3.774113572116412*^9, 3.774113720175338*^9}, {
+   3.774114307077338*^9, 3.7741143140699663`*^9}, {3.774114354034519*^9, 
+   3.7741143846723213`*^9}, {3.77411587848938*^9, 
+   3.7741158900930147`*^9}},ExpressionUUID->"0aca3215-d5ad-4fb3-b051-\
+a7b88bae6ace"],
+
+Cell[TextData[{
+ "\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Pi]", "1"], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"335", "-", "Q"}], ")"}], 
+      SubscriptBox["q", "1"]}], "-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"5", 
+        SubscriptBox["q", "1"]}], "+", 
+       SuperscriptBox[
+        SubscriptBox["q", "1"], "2"]}], ")"}], "-", "3000"}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Pi]", "2"], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"335", "-", "Q"}], ")"}], 
+      SubscriptBox["q", "2"]}], "-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"5", 
+        SubscriptBox["q", "1"]}], "+", 
+       SuperscriptBox[
+        SubscriptBox["q", "1"], "2"]}], ")"}], "-", "2000"}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Pi]", "3"], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"335", "-", "Q"}], ")"}], 
+      SubscriptBox["q", "3"]}], "-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"5", 
+        SubscriptBox["q", "1"]}], "+", 
+       SuperscriptBox[
+        SubscriptBox["q", "1"], "2"]}], ")"}], "-", "2000"}]}], 
+   TraditionalForm]}],ExpressionUUID->
+  "53c6cb46-d61a-44b5-b20d-fe3c14fd319e"],
+ "\n\nNext we can eliminate ",
+ Cell[BoxData[
+  FormBox["Q", TraditionalForm]],ExpressionUUID->
+  "b5852f61-56dc-4389-b37b-9b24ea002bf6"],
+ " with the fact that the total market quantity, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Q", ","}], TraditionalForm]],ExpressionUUID->
+  "2a0ebbbb-2b99-4c55-963c-f0344ff4c6d3"],
+ " is the sum of the quantity produced by the three comprising firms ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Q", "=", 
+    RowBox[{
+     SubscriptBox["q", "1"], "+", 
+     SubscriptBox["q", "2"], "+", 
+     SubscriptBox["q", "3"]}]}], TraditionalForm]],ExpressionUUID->
+  "bc9c078a-f029-4988-ab89-10afe88e1f8e"],
+ ". "
+}], "Text",
+ CellChangeTimes->{
+  3.774108107767432*^9, {3.774111045552359*^9, 3.774111049155195*^9}, {
+   3.774112715429975*^9, 3.774112715430532*^9}, {3.774112831293078*^9, 
+   3.774112832793805*^9}, {3.7741129210472403`*^9, 3.774113067280923*^9}, {
+   3.774113247913083*^9, 3.774113298534624*^9}, {3.774113356973097*^9, 
+   3.774113421327261*^9}, {3.774113572116412*^9, 3.774113720175338*^9}, {
+   3.774114307077338*^9, 3.7741143140699663`*^9}, {3.774114354034519*^9, 
+   3.7741143846723213`*^9}, {3.77411587848938*^9, 
+   3.774115888580285*^9}},ExpressionUUID->"0fea5b61-0d1b-40c9-9562-\
+eab8e6b7cf64"],
+
+Cell[TextData[{
+ "\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Pi]", "1"], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"335", "-", 
+        SubscriptBox["q", "1"], "-", 
+        SubscriptBox["q", "2"], "-", 
+        SubscriptBox["q", "3"]}], ")"}], 
+      SubscriptBox["q", "1"]}], "-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"5", 
+        SubscriptBox["q", "1"]}], "+", 
+       SuperscriptBox[
+        SubscriptBox["q", "1"], "2"]}], ")"}], "-", "3000"}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Pi]", "2"], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"335", "-", 
+        SubscriptBox["q", "1"], "-", 
+        SubscriptBox["q", "2"], "-", 
+        SubscriptBox["q", "3"]}], ")"}], 
+      SubscriptBox["q", "2"]}], "-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"5", 
+        SubscriptBox["q", "1"]}], "+", 
+       SuperscriptBox[
+        SubscriptBox["q", "1"], "2"]}], ")"}], "-", "2000"}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Pi]", "3"], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"335", "-", 
+        SubscriptBox["q", "1"], "-", 
+        SubscriptBox["q", "2"], "-", 
+        SubscriptBox["q", "3"]}], ")"}], 
+      SubscriptBox["q", "3"]}], "-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"5", 
+        SubscriptBox["q", "1"]}], "+", 
+       SuperscriptBox[
+        SubscriptBox["q", "1"], "2"]}], ")"}], "-", "2000"}]}], 
+   TraditionalForm]}],ExpressionUUID->
+  "70733944-9a3d-4b0b-a8f7-865cd2efc4ea"],
+ "\n\nEach firm seeks to optimize profits but does not know the quantities \
+produced by the other two firms in the market. Thus, the profit of firm 1 is \
+best written as ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Pi]", "1"], "(", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["q", "1"], ";", 
+      SubscriptBox["q", "2"]}], ",", 
+     SubscriptBox["q", "3"]}], ")"}], TraditionalForm]],ExpressionUUID->
+  "e32feb57-b199-406f-addd-9d480a3190cb"],
+ " in order to highlight the fact that firm 1 only has control of firm 1's \
+quantity. \n\nEach firm maximizes their profit by solving the first order \
+condition of their profit functions."
+}], "Text",
+ CellChangeTimes->{
+  3.774108107767432*^9, {3.774111045552359*^9, 3.774111049155195*^9}, {
+   3.774112715429975*^9, 3.774112715430532*^9}, {3.774112831293078*^9, 
+   3.774112832793805*^9}, {3.7741129210472403`*^9, 3.774113067280923*^9}, {
+   3.774113247913083*^9, 3.774113298534624*^9}, {3.774113356973097*^9, 
+   3.774113421327261*^9}, {3.774113572116412*^9, 3.774113720175338*^9}, {
+   3.774114307077338*^9, 3.7741143140699663`*^9}, {3.774114354034519*^9, 
+   3.7741143846723213`*^9}, {3.77411587848938*^9, 
+   3.774115882879407*^9}},ExpressionUUID->"6891151e-1d13-4ff5-abb6-\
+1ddf9d8c9ed6"],
+
+Cell[TextData[{
+ "\n",
+ Cell[BoxData[{
+  FormBox[
+   StyleBox[
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[PartialD]", 
+       SubscriptBox["\[Pi]", "1"]}], 
+      RowBox[{"\[PartialD]", 
+       SubscriptBox["q", "1"]}]], "=", 
+     RowBox[{
+      RowBox[{"335", "-", 
+       RowBox[{"2", 
+        SubscriptBox["q", "1"]}], "-", 
+       SubscriptBox["q", "2"], "-", 
+       SubscriptBox["q", "3"], "-", "5", "-", 
+       RowBox[{"2", 
+        SubscriptBox["q", "1"]}]}], "=", 
+      RowBox[{
+       RowBox[{"330", "-", 
+        RowBox[{"4", 
+         SubscriptBox["q", "1"]}], "-", 
+        SubscriptBox["q", "2"], "-", 
+        SubscriptBox["q", "3"]}], "=", "0"}]}]}],
+    FontWeight->"Plain"], TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   StyleBox[
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[PartialD]", 
+       SubscriptBox["\[Pi]", "1"]}], 
+      RowBox[{"\[PartialD]", 
+       SubscriptBox["q", "2"]}]], "=", 
+     RowBox[{
+      RowBox[{"330", "-", 
+       RowBox[{"4", 
+        SubscriptBox["q", "2"]}], "-", 
+       SubscriptBox["q", "1"], "-", 
+       SubscriptBox["q", "3"]}], "=", "0"}]}],
+    FontWeight->"Plain"], TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   StyleBox[
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[PartialD]", 
+       SubscriptBox["\[Pi]", "1"]}], 
+      RowBox[{"\[PartialD]", 
+       SubscriptBox["q", "1"]}]], "=", 
+     RowBox[{
+      RowBox[{"330", "-", 
+       RowBox[{"4", 
+        SubscriptBox["q", "3"]}], "-", 
+       SubscriptBox["q", "2"], "-", 
+       SubscriptBox["q", "1"]}], "=", "0"}]}],
+    FontWeight->"Plain"], TraditionalForm]}], "Input",ExpressionUUID->
+  "20f789bc-a3a2-4ba6-8c79-57b006f26646"],
+ "\n\nIn Cournot competition each firm will assume that the others are \
+producing at their profit maximizing quantity and that each firm has full \
+knowledge over each others profit functions. Thus the reaction functions are \
+common knowledge."
+}], "Text",
+ CellChangeTimes->{
+  3.774108107767432*^9, {3.774111045552359*^9, 3.774111049155195*^9}, {
+   3.774112715429975*^9, 3.774112715430532*^9}, {3.774112831293078*^9, 
+   3.774112832793805*^9}, {3.7741129210472403`*^9, 3.774113067280923*^9}, {
+   3.774113247913083*^9, 3.774113298534624*^9}, {3.774113356973097*^9, 
+   3.774113421327261*^9}, {3.774113572116412*^9, 3.774113720175338*^9}, {
+   3.774114307077338*^9, 3.7741143140699663`*^9}, {3.774114354034519*^9, 
+   3.7741143846723213`*^9}, {3.77411587848938*^9, 
+   3.774115878489894*^9}},ExpressionUUID->"6ae0d290-75a9-452a-911a-\
+0824b6cbe8e8"],
+
+Cell[TextData[{
+ "\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     SubscriptBox["q", "1"], "*"], "=", 
+    RowBox[{"82.5", "-", 
+     RowBox[{
+      FractionBox["1", "4"], 
+      SubscriptBox["q", "2"]}], "-", 
+     RowBox[{
+      FractionBox["1", "4"], 
+      SubscriptBox["q", "3"]}]}]}], TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     SubscriptBox["q", "2"], "*"], "=", 
+    RowBox[{"82.5", "-", 
+     RowBox[{
+      FractionBox["1", "4"], 
+      SubscriptBox["q", "1"]}], "-", 
+     RowBox[{
+      FractionBox["1", "4"], 
+      SubscriptBox["q", "3"]}]}]}], TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     SubscriptBox["q", "3"], "*"], "=", 
+    RowBox[{"82.5", "-", 
+     RowBox[{
+      FractionBox["1", "4"], 
+      SubscriptBox["q", "2"]}], "-", 
+     RowBox[{
+      FractionBox["1", "4"], 
+      SubscriptBox["q", "1"]}]}]}], TraditionalForm]}],ExpressionUUID->
+  "841508fd-6171-4c18-b3cf-2cd6a9da6316"],
+ "\n\nEach of the firms has the exact same reaction function.  Adding the \
+three reaction functions (or inspecting the demand function) reveals that"
+}], "Text",
+ CellChangeTimes->{
+  3.774108107767432*^9, {3.774111045552359*^9, 3.774111049155195*^9}, {
+   3.774112715429975*^9, 3.774112715430532*^9}, {3.774112831293078*^9, 
+   3.774112832793805*^9}, {3.7741129210472403`*^9, 3.774113067280923*^9}, {
+   3.774113247913083*^9, 3.774113298534624*^9}, {3.774113356973097*^9, 
+   3.774113421327261*^9}, {3.774113572116412*^9, 3.774113720175338*^9}, {
+   3.774114307077338*^9, 3.7741143140699663`*^9}, {3.774114354034519*^9, 
+   3.7741143846723213`*^9}, {3.7741158804860973`*^9, 
+   3.774115880486388*^9}},ExpressionUUID->"023959b6-ff69-4f79-bddf-\
+ec23b08767ca"],
+
+Cell[TextData[{
+ "\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox[
+       SubscriptBox["q", "1"], "*"], "+", 
+      SuperscriptBox[
+       SubscriptBox["q", "2"], "*"], "+", 
+      SuperscriptBox[
+       SubscriptBox["q", "3"], "*"]}], ")"}], "=", 
+    RowBox[{"247.5", "-", 
+     RowBox[{
+      FractionBox["2", "4"], 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox[
+         SubscriptBox["q", "1"], "*"], "+", 
+        SuperscriptBox[
+         SubscriptBox["q", "2"], "*"], "+", 
+        SuperscriptBox[
+         SubscriptBox["q", "3"], "*"]}], ")"}]}]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    RowBox[{"1.5", 
+     SuperscriptBox["Q", "*"]}], "=", "247.5"}], TraditionalForm]}],
+  ExpressionUUID->"9a923a4f-b63f-48d1-af1f-75084608f0d8"],
+ "\n\n ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["Q", "*"], "=", "165", " "}], TraditionalForm]],
+  ExpressionUUID->"63a18302-e979-48b9-af3a-cf6cedab7a50"],
+ "and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     SubscriptBox["q", "1"], "*"], "=", 
+    RowBox[{
+     SuperscriptBox[
+      SubscriptBox["q", "2"], "*"], "=", 
+     RowBox[{
+      SuperscriptBox[
+       SubscriptBox["q", "3"], "*"], "=", "55"}]}]}], TraditionalForm]],
+  ExpressionUUID->"81ab019e-343b-4add-a3e7-d943b98c476e"],
+ ". Price is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"335", "-", "165"}], "=", "170"}], TraditionalForm]],
+  ExpressionUUID->"75eccd61-53de-4ed0-99b7-32b2cf10a4e7"],
+ ". Firm's 1 earns $3,050 and firms 2 and 3 earn$4,050 each. Market profit is \
+$11,150"
+}], "Text",
+ CellChangeTimes->{
+  3.774108107767432*^9, {3.774111045552359*^9, 3.774111049155195*^9}, {
+   3.774112715429975*^9, 3.774112715430532*^9}, {3.774112831293078*^9, 
+   3.774112832793805*^9}, {3.7741129210472403`*^9, 3.774113067280923*^9}, {
+   3.774113247913083*^9, 3.774113298534624*^9}, {3.774113356973097*^9, 
+   3.774113421327261*^9}, {3.774113572116412*^9, 3.774113720175338*^9}, {
+   3.774114307077338*^9, 3.7741143140699663`*^9}, {3.774114354034519*^9, 
+   3.7741143846723213`*^9}},ExpressionUUID->"e713e5be-b7ff-44be-b8f9-\
+284cde779357"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Herfindahl-Hirschman Index", "Subsubsection",
+ CellChangeTimes->{{3.774106293931425*^9, 
+  3.774106306675619*^9}},ExpressionUUID->"91840e76-fcf7-425f-8a81-\
+f0554de7f8b4"],
+
+Cell["\<\
+The Herfindahl-Hirschman Index is a measure of market concentration where \
+scores closer to 0 indicate a perfectly competitive industry and scores near \
+to 1 indicate a monopoly. Mathematically, the  Herfindahl-Hirschman Index is \
+calculated as \
+\>", "Text",
+ CellChangeTimes->{{3.7741106588384247`*^9, 3.77411069737251*^9}, {
+  3.774110729846406*^9, 
+  3.774110821327883*^9}},ExpressionUUID->"ad1f5ed0-e51e-4022-8485-\
+34ba470f7ebd"],
+
+Cell[BoxData[
+ RowBox[{"HHI", "=", 
+  RowBox[{
+   UnderoverscriptBox["\[Sum]", 
+    RowBox[{"i", "=", "1"}], "N"], 
+   SuperscriptBox[
+    SubscriptBox["s", "i"], "2"]}]}]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.774110871396308*^9, 3.774110902903864*^9}, {
+   3.774111028465604*^9, 3.774111029356851*^9}, 
+   3.774111087798788*^9},ExpressionUUID->"6b5e1ce6-68c8-437b-9fab-\
+64e27c6a8872"],
+
+Cell[TextData[{
+ "where ",
+ Cell[BoxData[
+  FormBox[Cell[TextData[Cell[BoxData[
+    FormBox[
+     SubscriptBox["s", "i"], TraditionalForm]],ExpressionUUID->
+    "b40fe1c1-25b7-4d8c-b867-0082f19755d2"]],ExpressionUUID->
+    "5eef9f4d-4d09-4fc6-b77c-648bc8fa3d21"], TraditionalForm]],ExpressionUUID->
+  "47a3faf8-06b3-4378-869c-4432ecce6646"],
+ "is the market share of firm ",
+ Cell[BoxData[
+  FormBox["i", TraditionalForm]],ExpressionUUID->
+  "03e873e2-ba24-4009-91df-33e3aa1767dc"],
+ ". Market share is defined as a firms production, ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["q", "i"], TraditionalForm]],ExpressionUUID->
+  "a249c288-c08e-4040-bab3-5d6b6b0c63fc"],
+ "divided by total market production.\n\nIn the case of the above example, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"HHI", "=", 
+    RowBox[{
+     RowBox[{"3", "\[Times]", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        FractionBox["55", "165"], ")"}], "2"]}], "=", "0.12"}]}], 
+   TraditionalForm]],ExpressionUUID->"4ffe049f-a85d-4e82-be8b-9accbb2fd2fd"]
+}], "Text",
+ CellChangeTimes->{{3.774110977016552*^9, 3.7741110223565474`*^9}, {
+  3.7741110923623466`*^9, 3.7741112382461243`*^9}, {3.774114505472666*^9, 
+  3.774114533735504*^9}},ExpressionUUID->"6345fec7-49f3-4b7e-a284-\
+0084f20c7fa1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["B. What happens to it if Firms 1 and 2 merge?", "Subsection",
+ CellChangeTimes->{{3.7741061923622627`*^9, 3.774106199479136*^9}, {
+  3.7741160974755793`*^9, 3.774116098197549*^9}, {3.774116146622616*^9, 
+  3.774116146898713*^9}},ExpressionUUID->"54693604-500a-42a1-8270-\
+b750a6a8a786"],
+
+Cell[TextData[{
+ "We need to refine some of the global variables. First, lets call the \
+quantity produced by the merged firm ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["q", "m"], "=", 
+    RowBox[{
+     SubscriptBox["q", "1"], "+", 
+     SubscriptBox["q", "2"]}]}], TraditionalForm]],ExpressionUUID->
+  "c2275ba0-1f01-44fe-ad40-2152930f1fa1"],
+ ". Total market quantity is now the sum of the merged firm and firm 3, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Q", "'"}], "=", 
+    RowBox[{
+     SubscriptBox["q", "m"], "+", 
+     RowBox[{
+      SubscriptBox["q", "3"], "."}]}]}], TraditionalForm]],ExpressionUUID->
+  "e974b3e1-cb7f-4a0d-abbf-d9eaab12b716"],
+ "\n\nThe new firm decides to use firm 1 and 2\[CloseCurlyQuote]s accumulated \
+physical capital to jointly maximize a profit function. But before profit \
+optimization, it must decide how much to produce using firm 1\
+\[CloseCurlyQuote]s old capacity and how much to produce using firm 2\
+\[CloseCurlyQuote]s old capacity. It will allocation production to the cost \
+minimizing combination.\n\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    SubscriptBox["C", "m"], "=", 
+    RowBox[{
+     SubscriptBox["C", "1"], "+", 
+     SubscriptBox["C", "2"]}]}], TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    SubscriptBox["C", "m"], "=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"5", 
+        SubscriptBox["q", "1"]}], "+", 
+       SuperscriptBox[
+        SubscriptBox["q", "1"], "2"], "+", "3000"}], ")"}], "+", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"5", 
+        SubscriptBox["q", "2"]}], "+", 
+       SuperscriptBox[
+        SubscriptBox["q", "2"], "2"], "+", "2000"}], ")"}]}]}], 
+   TraditionalForm]}],ExpressionUUID->
+  "893d53c5-1fbe-48cd-9018-d2346fb3a77c"],
+ "\n\nLets eliminate ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["q", "2"], TraditionalForm]],ExpressionUUID->
+  "a1f0d722-967a-4799-9ec4-761519427203"],
+ "from the cost function by substituting ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["q", "m"], "-", 
+    SubscriptBox["q", "1"]}], TraditionalForm]],ExpressionUUID->
+  "9c1a4a18-0864-43e4-87e8-43ff0de57910"]
+}], "Text",
+ CellChangeTimes->{{3.774111248866994*^9, 3.774111768877281*^9}, {
+  3.7741118000730133`*^9, 3.774112328203287*^9}, {3.774112381225258*^9, 
+  3.774112648293124*^9}, {3.774112770119849*^9, 3.774112774111134*^9}, {
+  3.774113433057023*^9, 3.7741135364786167`*^9}, {3.7741137314226513`*^9, 
+  3.774113933891461*^9}, {3.774113994397169*^9, 3.774114004662978*^9}, {
+  3.774114046914662*^9, 3.77411407006924*^9}, {3.7741142001669073`*^9, 
+  3.774114208100349*^9}, {3.774114264438373*^9, 3.774114265777239*^9}, {
+  3.7741143973753023`*^9, 3.774114409792301*^9}, {3.7741158656343184`*^9, 
+  3.774115865634605*^9}},ExpressionUUID->"a75819dd-4f4d-4678-9910-\
+0036dbfbe617"],
+
+Cell[TextData[{
+ "\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    SubscriptBox["C", "m"], "=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"5", 
+        SubscriptBox["q", "1"]}], "+", 
+       SuperscriptBox[
+        SubscriptBox["q", "1"], "2"], "+", "3000"}], ")"}], "+", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"5", 
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["q", "m"], "-", 
+          SubscriptBox["q", "1"]}], ")"}]}], "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["q", "m"], "-", 
+          SubscriptBox["q", "1"]}], ")"}], "2"], "+", "2000"}], ")"}]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    FractionBox[
+     RowBox[{"\[PartialD]", 
+      SubscriptBox["C", "m"]}], 
+     RowBox[{"\[PartialD]", 
+      SubscriptBox["q", "1"]}]], "=", 
+    RowBox[{
+     RowBox[{"5", "+", 
+      RowBox[{"2", 
+       SubscriptBox["q", "1"]}], "-", "5", "-", 
+      RowBox[{"2", 
+       RowBox[{"(", 
+        RowBox[{
+         SubscriptBox["q", "m"], "-", 
+         SubscriptBox["q", "1"]}], ")"}]}]}], "=", "0"}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    SubscriptBox["q", "1"], "=", 
+    RowBox[{
+     FractionBox["1", "2"], 
+     SubscriptBox["q", "m"]}]}], TraditionalForm]}],ExpressionUUID->
+  "74eaaa8b-cdff-42aa-baed-99fc93b1345c"],
+ "\n\nSolving the FOC confirms that the cost minimizing production schemes is \
+to produce half of total output with firm 1's technology (facing its cost \
+function) and half with firm 2's technology (facing its cost function). \
+Solving for the SOC will confirm that the solution is a minima.\n\nWe can use \
+our optimal production scheme for the merged firm to eliminate ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["q", "1"], TraditionalForm]],ExpressionUUID->
+  "acb65276-3172-4ca0-8e61-1783fbcd33c3"],
+ "from its cost function."
+}], "Text",
+ CellChangeTimes->{{3.774111248866994*^9, 3.774111768877281*^9}, {
+  3.7741118000730133`*^9, 3.774112328203287*^9}, {3.774112381225258*^9, 
+  3.774112648293124*^9}, {3.774112770119849*^9, 3.774112774111134*^9}, {
+  3.774113433057023*^9, 3.7741135364786167`*^9}, {3.7741137314226513`*^9, 
+  3.774113933891461*^9}, {3.774113994397169*^9, 3.774114004662978*^9}, {
+  3.774114046914662*^9, 3.77411407006924*^9}, {3.7741142001669073`*^9, 
+  3.774114208100349*^9}, {3.774114264438373*^9, 3.774114265777239*^9}, {
+  3.7741143973753023`*^9, 3.774114409792301*^9}, {3.774115868346139*^9, 
+  3.774115868346752*^9}},ExpressionUUID->"e2dbead1-531d-4d91-a137-\
+ea878293ae68"],
+
+Cell[TextData[{
+ "\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    SubscriptBox["C", "m"], "=", 
+    RowBox[{"5000", "+", 
+     RowBox[{
+      FractionBox["5", "2"], 
+      SubscriptBox["q", "m"]}], "+", 
+     RowBox[{
+      FractionBox["1", "4"], 
+      SuperscriptBox[
+       SubscriptBox["q", "m"], "2"]}], "+", 
+     RowBox[{"5", 
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["q", "m"], "-", 
+        RowBox[{
+         FractionBox["1", "2"], 
+         SubscriptBox["q", "m"]}]}], ")"}]}], "+", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["q", "m"], "-", 
+        RowBox[{
+         FractionBox["1", "2"], 
+         SubscriptBox["q", "m"]}]}], ")"}], "2"]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    SubscriptBox["C", "m"], "=", 
+    RowBox[{"5000", "+", 
+     RowBox[{
+      FractionBox["5", "2"], 
+      SubscriptBox["q", "m"]}], "+", 
+     RowBox[{
+      FractionBox["1", "4"], 
+      SuperscriptBox[
+       SubscriptBox["q", "m"], "2"]}], "+", 
+     RowBox[{"5", 
+      SubscriptBox["q", "m"]}], "-", 
+     RowBox[{
+      FractionBox["5", "2"], 
+      SubscriptBox["q", "m"]}], "+", 
+     SuperscriptBox[
+      SubscriptBox["q", "m"], "2"], "-", 
+     RowBox[{"2", 
+      RowBox[{"(", 
+       RowBox[{
+        FractionBox["1", "2"], 
+        SuperscriptBox[
+         SubscriptBox["q", "m"], "2"]}], ")"}]}], "+", 
+     RowBox[{
+      FractionBox["1", "4"], 
+      SuperscriptBox[
+       SubscriptBox["q", "m"], "2"]}]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    SubscriptBox["C", "m"], "=", 
+    RowBox[{"5000", "+", 
+     RowBox[{
+      FractionBox["1", "2"], 
+      SuperscriptBox[
+       SubscriptBox["q", "m"], "2"]}], "+", 
+     RowBox[{"5", 
+      SubscriptBox["q", "m"]}]}]}], TraditionalForm]}],ExpressionUUID->
+  "75af2b42-6026-48ae-9496-d1b576b6f8a4"],
+ "\n\nUsing this new cost function, we can calculate the profit and reaction \
+function for the merged firm"
+}], "Text",
+ CellChangeTimes->{{3.774111248866994*^9, 3.774111768877281*^9}, {
+  3.7741118000730133`*^9, 3.774112328203287*^9}, {3.774112381225258*^9, 
+  3.774112648293124*^9}, {3.774112770119849*^9, 3.774112774111134*^9}, {
+  3.774113433057023*^9, 3.7741135364786167`*^9}, {3.7741137314226513`*^9, 
+  3.774113933891461*^9}, {3.774113994397169*^9, 3.774114004662978*^9}, {
+  3.774114046914662*^9, 3.77411407006924*^9}, {3.7741142001669073`*^9, 
+  3.774114208100349*^9}, {3.774114264438373*^9, 3.774114265777239*^9}, {
+  3.7741143973753023`*^9, 3.774114409792301*^9}, {3.7741158703712883`*^9, 
+  3.774115870371653*^9}},ExpressionUUID->"ab30f6bf-2e45-4059-9771-\
+92dbe92131fe"],
+
+Cell[TextData[{
+ "\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Pi]", "m"], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"335", "-", 
+        SubscriptBox["q", "m"], "-", 
+        SubscriptBox["q", "3"]}], ")"}], 
+      SubscriptBox["q", "m"]}], "-", "5000", "-", 
+     RowBox[{
+      FractionBox["1", "2"], 
+      SuperscriptBox[
+       SubscriptBox["q", "m"], "2"]}], "-", 
+     RowBox[{"5", 
+      SubscriptBox["q", "m"]}]}]}], TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    FractionBox[
+     RowBox[{"\[PartialD]", 
+      SubscriptBox["\[Pi]", "m"]}], 
+     SubscriptBox["C", "m"]], "=", 
+    RowBox[{
+     RowBox[{"335", "-", 
+      RowBox[{"2", 
+       SubscriptBox["q", "m"]}], "-", 
+      SubscriptBox["q", "3"], "-", 
+      SubscriptBox["q", "m"], "-", "5"}], "=", "0"}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     SubscriptBox["q", "m"], "*"], "=", 
+    RowBox[{"110", "-", 
+     RowBox[{
+      FractionBox["1", "3"], 
+      SubscriptBox["q", "3"]}]}]}], TraditionalForm]}],ExpressionUUID->
+  "76d22d33-645c-4f5a-b149-1c8c6d9d63aa"],
+ "\n\nAdapting firm 3's reaction function from above"
+}], "Text",
+ CellChangeTimes->{{3.774111248866994*^9, 3.774111768877281*^9}, {
+  3.7741118000730133`*^9, 3.774112328203287*^9}, {3.774112381225258*^9, 
+  3.774112648293124*^9}, {3.774112770119849*^9, 3.774112774111134*^9}, {
+  3.774113433057023*^9, 3.7741135364786167`*^9}, {3.7741137314226513`*^9, 
+  3.774113933891461*^9}, {3.774113994397169*^9, 3.774114004662978*^9}, {
+  3.774114046914662*^9, 3.77411407006924*^9}, {3.7741142001669073`*^9, 
+  3.774114208100349*^9}, {3.774114264438373*^9, 3.774114265777239*^9}, {
+  3.7741143973753023`*^9, 3.774114409792301*^9}, {3.77411587333134*^9, 
+  3.774115873331658*^9}},ExpressionUUID->"532bcbbe-9485-4a34-b761-\
+0afec7359cd5"],
+
+Cell[TextData[{
+ "\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     SubscriptBox["q", "3"], "*"], "=", 
+    RowBox[{"82.5", "-", 
+     RowBox[{
+      FractionBox["1", "4"], 
+      SubscriptBox["q", "m"]}]}]}], TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     SubscriptBox["q", "3"], "*"], "=", 
+    RowBox[{"82.5", "-", 
+     RowBox[{
+      FractionBox["1", "4"], 
+      RowBox[{"(", 
+       RowBox[{"110", "-", 
+        RowBox[{
+         FractionBox["1", "3"], 
+         SubscriptBox["q", "m"]}]}], ")"}]}]}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     SubscriptBox["q", "3"], "*"], "=", 
+    RowBox[{
+     RowBox[{"55", "*", 
+      FractionBox["12", "11"]}], "=", "60"}]}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     SubscriptBox["q", "m"], "*"], "=", 
+    RowBox[{
+     RowBox[{"110", "-", "20"}], "=", "90"}]}], TraditionalForm]}],
+  ExpressionUUID->"4cb363d2-6bc6-4735-bc95-9d15df9b9cff"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Q", "'"}], TraditionalForm]],ExpressionUUID->
+  "7c4ccb58-7699-4c37-a596-05c3bbbcf2fe"],
+ " is now ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"90", "+", "60"}], "=", "150"}], TraditionalForm]],ExpressionUUID->
+  "424ee6a5-4941-4498-bb1c-6e0fec3e83a5"],
+ " and price is 185. The merged firm earns $11,650 and firm 3 earns $5,200. \
+Market profits are $16,850. Notice that the merged also increased firm 3's \
+profits."
+}], "Text",
+ CellChangeTimes->{{3.774111248866994*^9, 3.774111768877281*^9}, {
+  3.7741118000730133`*^9, 3.774112328203287*^9}, {3.774112381225258*^9, 
+  3.774112648293124*^9}, {3.774112770119849*^9, 3.774112774111134*^9}, {
+  3.774113433057023*^9, 3.7741135364786167`*^9}, {3.7741137314226513`*^9, 
+  3.774113933891461*^9}, {3.774113994397169*^9, 3.774114004662978*^9}, {
+  3.774114046914662*^9, 3.77411407006924*^9}, {3.7741142001669073`*^9, 
+  3.774114208100349*^9}, {3.774114264438373*^9, 3.774114265777239*^9}, {
+  3.7741143973753023`*^9, 
+  3.774114409792301*^9}},ExpressionUUID->"d8ae70e7-0f0f-4c8a-a755-\
+7780eed76edc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["C. Herfindahl-Hirschman Index in merged market", "Subsection",
+ CellChangeTimes->{{3.7741144177593527`*^9, 3.7741144286138783`*^9}, {
+  3.774116103650834*^9, 3.774116104152215*^9}, {3.774116150403459*^9, 
+  3.774116151174345*^9}},ExpressionUUID->"28cf1e6d-9ebc-4b96-9c7c-\
+fb00a8d6a29d"],
+
+Cell[TextData[{
+ "Using the merged market we can recalculate the HHI as ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       FractionBox["90", "150"], ")"}], "2"], "+", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       FractionBox["60", "150"], ")"}], "2"]}], "=", 
+    RowBox[{"0.52", "."}]}], TraditionalForm]],ExpressionUUID->
+  "d3f59e50-f73c-4415-b234-871f11dbf639"],
+ " The dramatic increase in market concentration from 0.12 to 0.52 helps \
+explain why firm 3\[CloseCurlyQuote]s profits increased. It benefited from \
+the decrease in competition."
+}], "Text",
+ CellChangeTimes->{{3.774114433738908*^9, 3.774114490512024*^9}, {
+  3.774114537071607*^9, 
+  3.774114565595648*^9}},ExpressionUUID->"b728fce6-0c33-4531-96c5-\
+e969607a2457"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.774106141144371*^9, 
+  3.774106143324254*^9}},ExpressionUUID->"72e037e9-2c72-4966-ada8-\
+ab452b406e9d"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1309, 704},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 160, 3, 99, "Title",ExpressionUUID->"62d2a2c1-cf7c-4920-aa8a-cd12ff10f4f5"],
+Cell[CellGroupData[{
+Cell[765, 29, 168, 3, 70, "Chapter",ExpressionUUID->"0ee83544-4d4f-496b-ab2c-46befb53e00a"],
+Cell[CellGroupData[{
+Cell[958, 36, 327, 5, 68, "Section",ExpressionUUID->"e4a1869a-9d35-4946-bab2-fe979c2befc3"],
+Cell[1288, 43, 863, 25, 60, "Text",ExpressionUUID->"eb604d44-704c-456e-b6ad-eb72e113873c"],
+Cell[CellGroupData[{
+Cell[2176, 72, 307, 5, 55, "Subsection",ExpressionUUID->"111f88ea-f137-4553-9096-756f5a8acaf1"],
+Cell[CellGroupData[{
+Cell[2508, 81, 171, 3, 46, "Subsubsection",ExpressionUUID->"0f8b855d-0649-4dca-9474-bf589cc4854f"],
+Cell[2682, 86, 1232, 24, 108, "Text",ExpressionUUID->"202ecd2d-3744-45b6-8b84-72ce789a4b6d"],
+Cell[3917, 112, 2129, 62, 163, "Text",ExpressionUUID->"0aca3215-d5ad-4fb3-b051-a7b88bae6ace"],
+Cell[6049, 176, 2568, 78, 163, "Text",ExpressionUUID->"0fea5b61-0d1b-40c9-9562-eab8e6b7cf64"],
+Cell[8620, 256, 2901, 84, 185, "Text",ExpressionUUID->"6891151e-1d13-4ff5-abb6-1ddf9d8c9ed6"],
+Cell[11524, 342, 2536, 71, 178, "Text",ExpressionUUID->"6ae0d290-75a9-452a-911a-0824b6cbe8e8"],
+Cell[14063, 415, 1778, 49, 143, "Text",ExpressionUUID->"023959b6-ff69-4f79-bddf-ec23b08767ca"],
+Cell[15844, 466, 2190, 66, 109, "Text",ExpressionUUID->"e713e5be-b7ff-44be-b8f9-284cde779357"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18071, 537, 177, 3, 22, "Subsubsection",ExpressionUUID->"91840e76-fcf7-425f-8a81-f0554de7f8b4"],
+Cell[18251, 542, 448, 9, 43, "Text",ExpressionUUID->"ad1f5ed0-e51e-4022-8485-34ba470f7ebd"],
+Cell[18702, 553, 398, 10, 54, "DisplayFormulaNumbered",ExpressionUUID->"6b5e1ce6-68c8-437b-9fab-64e27c6a8872"],
+Cell[19103, 565, 1265, 32, 72, "Text",ExpressionUUID->"6345fec7-49f3-4b7e-a284-0084f20c7fa1"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20417, 603, 292, 4, 37, "Subsection",ExpressionUUID->"54693604-500a-42a1-8270-b750a6a8a786"],
+Cell[20712, 609, 2850, 74, 178, "Text",ExpressionUUID->"a75819dd-4f4d-4678-9910-0036dbfbe617"],
+Cell[23565, 685, 2600, 70, 201, "Text",ExpressionUUID->"e2dbead1-531d-4d91-a137-ea878293ae68"],
+Cell[26168, 757, 2667, 81, 146, "Text",ExpressionUUID->"ab30f6bf-2e45-4059-9771-92dbe92131fe"],
+Cell[28838, 840, 1886, 52, 149, "Text",ExpressionUUID->"532bcbbe-9485-4a34-b761-0afec7359cd5"],
+Cell[30727, 894, 2161, 63, 167, "Text",ExpressionUUID->"d8ae70e7-0f0f-4c8a-a755-7780eed76edc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32925, 962, 293, 4, 37, "Subsection",ExpressionUUID->"28cf1e6d-9ebc-4b96-9c7c-fb00a8d6a29d"],
+Cell[33221, 968, 789, 21, 53, "Text",ExpressionUUID->"b728fce6-0c33-4531-96c5-e969607a2457"],
+Cell[34013, 991, 152, 3, 32, "Input",ExpressionUUID->"72e037e9-2c72-4966-ada8-ab452b406e9d"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
